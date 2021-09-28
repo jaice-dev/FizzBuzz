@@ -7,7 +7,10 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            for (int i = 1; i <= 255; i++)
+            Console.WriteLine("Please enter a number to FizzBuzz up to: ");
+            int value = Convert.ToInt32(Console.ReadLine());
+                
+            for (int i = 1; i <= value; i++)
             {
                 bool fizz = (i % 3 == 0);
                 bool buzz = (i % 5 == 0);
