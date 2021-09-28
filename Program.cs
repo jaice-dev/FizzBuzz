@@ -8,9 +8,9 @@ namespace FizzBuzz
         static void Main(string[] args)
         {
             Console.WriteLine("Please enter a number to FizzBuzz up to: ");
-            int value = Convert.ToInt32(Console.ReadLine());
+            int maximumFizzBuzz = Convert.ToInt32(Console.ReadLine());
                 
-            for (int i = 1; i <= value; i++)
+            for (int i = 1; i <= maximumFizzBuzz; i++)
             {
                 bool fizz = (i % 3 == 0);
                 bool buzz = (i % 5 == 0);
@@ -19,52 +19,49 @@ namespace FizzBuzz
                 bool fezz = (i % 13 == 0);
                 bool reverse = (i % 17 == 0);
 
-                List<string> output = new List<string>();
+                List<string> fizzBuzzList = new List<string>();
 
                 if (fezz && !fizz) // Catches case where fezz would be before fizz
                 {
-                    output.Add("Fezz");
+                    fizzBuzzList.Add("Fezz");
                 }
 
                 if (bong)
                 {
-                    output.Add("Bong");
+                    fizzBuzzList.Add("Bong");
                 }
-                else
-                {
-                    if (fizz)
+                else if (fizz)
                     {
-                        output.Add("Fizz");
+                        fizzBuzzList.Add("Fizz");
                         if (fezz) // Writes fezz after fizz
                         {
-                            output.Add("Fezz");
+                            fizzBuzzList.Add("Fezz");
                         }
                     }
 
                     if (buzz)
                     {
-                        output.Add("Buzz");
+                        fizzBuzzList.Add("Buzz");
                     }
 
                     if (bang)
                     {
-                        output.Add("Bang");
+                        fizzBuzzList.Add("Bang");
                     }
 
                     if (!(fizz || buzz || bang || bong || fezz))
                     {
-                        output.Add(i.ToString());
+                        fizzBuzzList.Add(i.ToString());
                     }
-                }
+                
 
                 if (reverse)
                 {
-                    output.Reverse();
+                    fizzBuzzList.Reverse();
                 }
 
-                output.ForEach(Console.Write);
-                Console.Write("\n");
-
+                string joinedList = string.Join("", fizzBuzzList);
+                Console.WriteLine(joinedList);
             }
         }
     }
