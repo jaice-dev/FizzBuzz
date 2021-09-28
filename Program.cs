@@ -17,10 +17,15 @@ namespace FizzBuzz
             bool bongEnabled = args.Contains("-bong") || args.Contains("-all") || args.Length == 0;
             bool fezzEnabled = args.Contains("-fezz") || args.Contains("-all") || args.Length == 0;
             bool reverseEnabled = args.Contains("-reverse") || args.Contains("-all") || args.Length == 0;
-
+            
+            int maximumFizzBuzz;
             Console.WriteLine("Please enter a number to FizzBuzz up to: ");
-            int maximumFizzBuzz = Convert.ToInt32(Console.ReadLine());
-                
+            
+            while (!Int32.TryParse(Console.ReadLine(), out maximumFizzBuzz))
+            {
+                Console.WriteLine("Oops! Please enter a number: ");
+            }
+            
             for (int i = 1; i <= maximumFizzBuzz; i++)
             {
                 //FizzBuzz calculations
