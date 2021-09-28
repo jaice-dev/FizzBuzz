@@ -8,15 +8,18 @@ namespace FizzBuzz
         {
             for (int i = 1; i <= 100; i++)
             {
-                if (i % 3 == 0)
+                bool fizz = (i % 3 == 0);
+                bool buzz = (i % 5 == 0);
+                
+                if (fizz)
                 {
                     Console.Write("Fizz");
                 }
-                if (i % 5 == 0)
+                if (buzz)
                 {
                     Console.Write("Buzz");
                 }
-                if (!(i % 3 == 0 || i % 5 == 0))
+                if (!(fizz || buzz))
                 {
                     Console.Write(i);
                 }
