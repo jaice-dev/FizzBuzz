@@ -11,26 +11,32 @@ namespace FizzBuzz
                 bool fizz = (i % 3 == 0);
                 bool buzz = (i % 5 == 0);
                 bool bang = (i % 7 == 0);
-                
-                if (fizz)
-                {
-                    Console.Write("Fizz");
-                }
-                if (buzz)
-                {
-                    Console.Write("Buzz");
-                }
+                bool bong = (i % 11 == 0);
 
-                if (bang)
+                if (bong)
                 {
-                    Console.Write("Bang");
+                    Console.Write("Bong");
                 }
-                if (!(fizz || buzz || bang))
+                else
                 {
-                    Console.Write(i);
+                    if (fizz)
+                    {
+                        Console.Write("Fizz");
+                    }
+                    if (buzz)
+                    {
+                        Console.Write("Buzz");
+                    }
+
+                    if (bang)
+                    {
+                        Console.Write("Bang");
+                    }
+                    if (!(fizz || buzz || bang))
+                    {
+                        Console.Write(i);
+                    }
                 }
-                
-                
                 Console.Write("\n");
             }
         }
