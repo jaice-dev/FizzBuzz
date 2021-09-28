@@ -1,0 +1,16 @@
+C:\Training\FizzBuzz\bin\Debug\net5.0\FizzBuzz.exe
+C:\Training\FizzBuzz\bin\Debug\net5.0\FizzBuzz.deps.json
+C:\Training\FizzBuzz\bin\Debug\net5.0\FizzBuzz.runtimeconfig.json
+C:\Training\FizzBuzz\bin\Debug\net5.0\FizzBuzz.runtimeconfig.dev.json
+C:\Training\FizzBuzz\bin\Debug\net5.0\FizzBuzz.dll
+C:\Training\FizzBuzz\bin\Debug\net5.0\ref\FizzBuzz.dll
+C:\Training\FizzBuzz\bin\Debug\net5.0\FizzBuzz.pdb
+C:\Training\FizzBuzz\obj\Debug\net5.0\FizzBuzz.csproj.AssemblyReference.cache
+C:\Training\FizzBuzz\obj\Debug\net5.0\FizzBuzz.GeneratedMSBuildEditorConfig.editorconfig
+C:\Training\FizzBuzz\obj\Debug\net5.0\FizzBuzz.AssemblyInfoInputs.cache
+C:\Training\FizzBuzz\obj\Debug\net5.0\FizzBuzz.AssemblyInfo.cs
+C:\Training\FizzBuzz\obj\Debug\net5.0\FizzBuzz.csproj.CoreCompileInputs.cache
+C:\Training\FizzBuzz\obj\Debug\net5.0\FizzBuzz.dll
+C:\Training\FizzBuzz\obj\Debug\net5.0\ref\FizzBuzz.dll
+C:\Training\FizzBuzz\obj\Debug\net5.0\FizzBuzz.pdb
+C:\Training\FizzBuzz\obj\Debug\net5.0\FizzBuzz.genruntimeconfig.cache
