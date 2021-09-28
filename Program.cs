@@ -10,6 +10,7 @@ namespace FizzBuzz
             {
                 bool fizz = (i % 3 == 0);
                 bool buzz = (i % 5 == 0);
+                bool bang = (i % 7 == 0);
                 
                 if (fizz)
                 {
@@ -19,10 +20,16 @@ namespace FizzBuzz
                 {
                     Console.Write("Buzz");
                 }
-                if (!(fizz || buzz))
+
+                if (bang)
+                {
+                    Console.Write("Bang");
+                }
+                if (!(fizz || buzz || bang))
                 {
                     Console.Write(i);
                 }
+                
                 
                 Console.Write("\n");
             }
