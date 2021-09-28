@@ -43,34 +43,31 @@ namespace FizzBuzz
                     fizzBuzzList.Add("Bong");
                 }
                 
-                else
+                else if (fizz && fizzEnabled)
                 {
-                    if (fizz && fizzEnabled)
+                    fizzBuzzList.Add("Fizz");
+                    if (fezz && fezzEnabled) // Writes fezz after fizz
                     {
-                        fizzBuzzList.Add("Fizz");
-                        if (fezz && fezzEnabled) // Writes fezz after fizz
-                        {
-                            fizzBuzzList.Add("Fezz");
-                        }
-                    }
-
-                    if (buzz && buzzEnabled)
-                    {
-                        fizzBuzzList.Add("Buzz");
-                    }
-
-                    if (bang && bangEnabled)
-                    {
-                        fizzBuzzList.Add("Bang");
-                    }
-
-                    if (!((fizz && fizzEnabled) || (buzz && buzzEnabled) || (bang && bangEnabled) 
-                          || (bong && bongEnabled) || (fezz && fezzEnabled)))
-                    {
-                        fizzBuzzList.Add(i.ToString());
+                        fizzBuzzList.Add("Fezz");
                     }
                 }
-                
+
+                if (buzz && buzzEnabled)
+                {
+                    fizzBuzzList.Add("Buzz");
+                }
+
+                if (bang && bangEnabled)
+                {
+                    fizzBuzzList.Add("Bang");
+                }
+
+                if (!((fizz && fizzEnabled) || (buzz && buzzEnabled) || (bang && bangEnabled) 
+                      || (bong && bongEnabled) || (fezz && fezzEnabled)))
+                {
+                    fizzBuzzList.Add(i.ToString());
+                }
+
                 if (reverse && reverseEnabled)
                 {
                     fizzBuzzList.Reverse();
