@@ -9,12 +9,14 @@ namespace FizzBuzz
         static void Main(string[] args)
         {
             // Enables the FizzBuzz replacement if parameter is in args (pass -all for all enabled)
-            bool fizzEnabled = args.Contains("-fizz") || args.Contains("-all");
-            bool buzzEnabled = args.Contains("-buzz") || args.Contains("-all");;
-            bool bangEnabled = args.Contains("-bang") || args.Contains("-all");;
-            bool bongEnabled = args.Contains("-bong") || args.Contains("-all");;
-            bool fezzEnabled = args.Contains("-fezz") || args.Contains("-all");;
-            bool reverseEnabled = args.Contains("-reverse") || args.Contains("-all");;
+            // If no parameter passed, defaults to all enabled
+            // Can enter any other paremeter - eg. none to disable all
+            bool fizzEnabled = args.Contains("-fizz") || args.Contains("-all") || args.Length == 0;
+            bool buzzEnabled = args.Contains("-buzz") || args.Contains("-all") || args.Length == 0;
+            bool bangEnabled = args.Contains("-bang") || args.Contains("-all") || args.Length == 0;
+            bool bongEnabled = args.Contains("-bong") || args.Contains("-all") || args.Length == 0;
+            bool fezzEnabled = args.Contains("-fezz") || args.Contains("-all") || args.Length == 0;
+            bool reverseEnabled = args.Contains("-reverse") || args.Contains("-all") || args.Length == 0;
 
             Console.WriteLine("Please enter a number to FizzBuzz up to: ");
             int maximumFizzBuzz = Convert.ToInt32(Console.ReadLine());
