@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -7,6 +8,28 @@ namespace FizzBuzz
     class Program
     {
         static void Main(string[] args)
+        {
+            int maximumFizzBuzz;
+            Console.WriteLine("Please enter a number to FizzBuzz up to: ");
+            
+            while (!Int32.TryParse(Console.ReadLine(), out maximumFizzBuzz))
+            {
+                Console.WriteLine("Oops! Please enter a number: ");
+            }
+            
+            var fizzed = new FizzBuzzer(maximumFizzBuzz, args);
+            foreach (var value in fizzed)
+            {
+                Console.WriteLine(value);
+            }
+        }
+    }
+
+    class FizzBuzzer : IEnumerable
+    {
+        List<string> outputList = new List<string>();
+        
+        public FizzBuzzer(int maximumFizzBuzz, string[] args)
         {
             // Enables the FizzBuzz replacement if parameter is in args (pass -all for all enabled)
             // If no parameter passed, defaults to all enabled
@@ -17,15 +40,7 @@ namespace FizzBuzz
             bool bongEnabled = args.Contains("-bong") || args.Contains("-all") || args.Length == 0;
             bool fezzEnabled = args.Contains("-fezz") || args.Contains("-all") || args.Length == 0;
             bool reverseEnabled = args.Contains("-reverse") || args.Contains("-all") || args.Length == 0;
-            
-            int maximumFizzBuzz;
-            Console.WriteLine("Please enter a number to FizzBuzz up to: ");
-            
-            while (!Int32.TryParse(Console.ReadLine(), out maximumFizzBuzz))
-            {
-                Console.WriteLine("Oops! Please enter a number: ");
-            }
-            
+
             for (int i = 1; i <= maximumFizzBuzz; i++)
             {
                 //FizzBuzz calculations
@@ -47,7 +62,7 @@ namespace FizzBuzz
                 {
                     fizzBuzzList.Add("Bong");
                 }
-                
+
                 else if (fizz && fizzEnabled)
                 {
                     fizzBuzzList.Add("Fizz");
@@ -67,7 +82,7 @@ namespace FizzBuzz
                     fizzBuzzList.Add("Bang");
                 }
 
-                if (!((fizz && fizzEnabled) || (buzz && buzzEnabled) || (bang && bangEnabled) 
+                if (!((fizz && fizzEnabled) || (buzz && buzzEnabled) || (bang && bangEnabled)
                       || (bong && bongEnabled) || (fezz && fezzEnabled)))
                 {
                     fizzBuzzList.Add(i.ToString());
@@ -79,8 +94,15 @@ namespace FizzBuzz
                 }
 
                 string joinedList = string.Join("", fizzBuzzList);
-                Console.WriteLine(joinedList);
+                outputList.Add(joinedList);
             }
+
+        }
+        public IEnumerator GetEnumerator()
+        {
+            return outputList.GetEnumerator();
         }
     }
 }
+        
+        
