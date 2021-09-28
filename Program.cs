@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace FizzBuzz
 {
@@ -7,11 +8,20 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
+            // Enables the FizzBuzz replacement if parameter is in args (pass -all for all enabled)
+            bool fizzEnabled = args.Contains("-fizz") || args.Contains("-all");
+            bool buzzEnabled = args.Contains("-buzz") || args.Contains("-all");;
+            bool bangEnabled = args.Contains("-bang") || args.Contains("-all");;
+            bool bongEnabled = args.Contains("-bong") || args.Contains("-all");;
+            bool fezzEnabled = args.Contains("-fezz") || args.Contains("-all");;
+            bool reverseEnabled = args.Contains("-reverse") || args.Contains("-all");;
+
             Console.WriteLine("Please enter a number to FizzBuzz up to: ");
             int maximumFizzBuzz = Convert.ToInt32(Console.ReadLine());
                 
             for (int i = 1; i <= maximumFizzBuzz; i++)
             {
+                //FizzBuzz calculations
                 bool fizz = (i % 3 == 0);
                 bool buzz = (i % 5 == 0);
                 bool bang = (i % 7 == 0);
@@ -19,43 +29,47 @@ namespace FizzBuzz
                 bool fezz = (i % 13 == 0);
                 bool reverse = (i % 17 == 0);
 
-                List<string> fizzBuzzList = new List<string>();
+                List<string> fizzBuzzList = new List<string>(); // Initialise list
 
-                if (fezz && !fizz) // Catches case where fezz would be before fizz
+                if ((fezz && !fizz) && fezzEnabled) // Catches case where fezz would be before fizz
                 {
                     fizzBuzzList.Add("Fezz");
                 }
 
-                if (bong)
+                if (bong && bongEnabled)
                 {
                     fizzBuzzList.Add("Bong");
                 }
-                else if (fizz)
+                
+                else
+                {
+                    if (fizz && fizzEnabled)
                     {
                         fizzBuzzList.Add("Fizz");
-                        if (fezz) // Writes fezz after fizz
+                        if (fezz && fezzEnabled) // Writes fezz after fizz
                         {
                             fizzBuzzList.Add("Fezz");
                         }
                     }
 
-                    if (buzz)
+                    if (buzz && buzzEnabled)
                     {
                         fizzBuzzList.Add("Buzz");
                     }
 
-                    if (bang)
+                    if (bang && bangEnabled)
                     {
                         fizzBuzzList.Add("Bang");
                     }
 
-                    if (!(fizz || buzz || bang || bong || fezz))
+                    if (!((fizz && fizzEnabled) || (buzz && buzzEnabled) || (bang && bangEnabled) 
+                          || (bong && bongEnabled) || (fezz && fezzEnabled)))
                     {
                         fizzBuzzList.Add(i.ToString());
                     }
+                }
                 
-
-                if (reverse)
+                if (reverse && reverseEnabled)
                 {
                     fizzBuzzList.Reverse();
                 }
