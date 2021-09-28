@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace FizzBuzz
 {
@@ -13,14 +14,17 @@ namespace FizzBuzz
                 bool bang = (i % 7 == 0);
                 bool bong = (i % 11 == 0);
                 bool fezz = (i % 13 == 0);
+                bool reverse = (i % 17 == 0);
+
+                List<string> output = new List<string>();
 
                 if (fezz && !fizz) // Catches case where fezz would be before fizz
                 {
-                    Console.Write("Fezz");
+                    output.Add("Fezz");
                 }
                 if (bong)
                 {
-                    Console.Write("Bong");
+                    output.Add("Bong");
                 }
                 else
                 {
@@ -29,23 +33,24 @@ namespace FizzBuzz
                         Console.Write("Fizz");
                         if (fezz) // Writes fezz after fizz
                         {
-                            Console.Write("Fezz");
+                            output.Add("Fezz");
                         }
                     }
                     if (buzz)
                     {
-                        Console.Write("Buzz");
+                        output.Add("Buzz");
                     }
 
                     if (bang)
                     {
-                        Console.Write("Bang");
+                        output.Add("Bang");
                     }
                     if (!(fizz || buzz || bang || bong || fezz))
                     {
-                        Console.Write(i);
+                        output.Add(i.ToString());
                     }
                 }
+                output.ForEach(Console.Write);
                 Console.Write("\n");
             }
         }
