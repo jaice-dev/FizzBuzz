@@ -7,7 +7,7 @@ namespace FizzBuzz
     {
         static void Main(string[] args)
         {
-            for (int i = 1; i <= 200; i++)
+            for (int i = 1; i <= 255; i++)
             {
                 bool fizz = (i % 3 == 0);
                 bool buzz = (i % 5 == 0);
@@ -22,6 +22,7 @@ namespace FizzBuzz
                 {
                     output.Add("Fezz");
                 }
+
                 if (bong)
                 {
                     output.Add("Bong");
@@ -30,12 +31,13 @@ namespace FizzBuzz
                 {
                     if (fizz)
                     {
-                        Console.Write("Fizz");
+                        output.Add("Fizz");
                         if (fezz) // Writes fezz after fizz
                         {
                             output.Add("Fezz");
                         }
                     }
+
                     if (buzz)
                     {
                         output.Add("Buzz");
@@ -45,13 +47,21 @@ namespace FizzBuzz
                     {
                         output.Add("Bang");
                     }
+
                     if (!(fizz || buzz || bang || bong || fezz))
                     {
                         output.Add(i.ToString());
                     }
                 }
+
+                if (reverse)
+                {
+                    output.Reverse();
+                }
+
                 output.ForEach(Console.Write);
                 Console.Write("\n");
+
             }
         }
     }
